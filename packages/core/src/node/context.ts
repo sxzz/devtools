@@ -1,13 +1,13 @@
 import type { DevToolsNodeContext } from '@vitejs/devtools-kit'
 import type { ResolvedConfig, ViteDevServer } from 'vite'
-import Debug from 'debug'
+import { createDebug } from 'obug'
 import { ContextUtils } from './context-utils'
 import { DevToolsDockHost } from './host-docks'
 import { RpcFunctionsHost } from './host-functions'
 import { DevToolsViewHost } from './host-views'
 import { builtinRpcFunctions } from './rpc'
 
-const debug = Debug('vite:devtools:context')
+const debug = createDebug('vite:devtools:context')
 
 export async function createDevToolsContext(
   viteConfig: ResolvedConfig,
